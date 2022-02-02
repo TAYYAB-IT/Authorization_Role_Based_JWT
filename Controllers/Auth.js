@@ -28,9 +28,9 @@ module.exports.genrate_token=async(data)=>{
 }
 
 //Check Role
-module.exports.checkrole=(role=>{
+module.exports.checkrole=(roles=>{
     return (req,res,next)=>{
-        if(req.user.Role==role){
+        if(roles.includes(req.user.Role)){
            next();
         }
         else{
